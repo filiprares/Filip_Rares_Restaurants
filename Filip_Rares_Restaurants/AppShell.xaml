@@ -1,0 +1,17 @@
+<Shell
+ x:Class="Filip_Rares_Restaurants.AppShell"
+ xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ xmlns:local="clr-namespace:Filip_Rares_Restaurants"
+ Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Welcome"
+        ContentTemplate="{DataTemplate local:WelcomePage}"
+    />
+
+    <TabBar IsVisible="False">
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate local:RegisterPage}" />
+    </TabBar>
+</Shell>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- AddRestaurantPage.xaml -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Filip_Rares_Restaurants.AddRestaurantPage"
+             Title="Add Restaurant">
+
+    <StackLayout Padding="20">
+        <Entry x:Name="nameEntry" Placeholder="Name" />
+        <Entry x:Name="addressEntry" Placeholder="Address" />
+        <Entry x:Name="descriptionEntry" Placeholder="Description" />
+        <Entry x:Name="hoursEntry" Placeholder="Operating Hours" />
+        <Button Text="Save" Clicked="OnSaveClicked" />
+        <Button Text="Cancel" Clicked="OnCancelClicked" />
+    </StackLayout>
+</ContentPage>

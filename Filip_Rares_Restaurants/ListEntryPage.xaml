@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:Filip_Rares_Restaurants"
+             x:Class="Filip_Rares_Restaurants.ListEntryPage"
+             Title="Restaurants">
+
+    <StackLayout>
+        <!-- SearchBar -->
+        <SearchBar x:Name="restaurantSearchBar"
+                   Placeholder="Search restaurants"
+                   TextChanged="SearchBar_TextChanged"
+                   SearchCommand="{Binding SearchCommand}"
+                   SearchCommandParameter="{Binding Text, Source={x:Reference restaurantSearchBar}}"/>
+
+        <!-- ListView for Restaurants -->
+        <ListView x:Name="listView" Margin="20" ItemSelected="OnListViewItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <!-- Restaurant Details -->
+                            <Label Text="{Binding Nume}" FontSize="Medium" FontAttributes="Bold"/>
+                            <Label Text="{Binding Adresa}" FontSize="Small"/>
+                            <Label Text="{Binding Descriere}" FontSize="Small"/>
+                            <Label Text="{Binding OrarFunctionare}" FontSize="Small"/>
+
+                            <!-- Action Buttons -->
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Button Text="Menu" Clicked="OnMenuButtonClicked" CommandParameter="{Binding .}" />
+                                <Button Text="Edit" Clicked="EditButton_Clicked" CommandParameter="{Binding .}"   />
+                                <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}"  />
+                            </StackLayout> 
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Restaurant" Clicked="OnAddRestaurantClicked" />
+        <ToolbarItem Text="Logout" Clicked="OnLogoutClicked" />
+    </ContentPage.ToolbarItems>
+
+</ContentPage>
+
